@@ -13,6 +13,8 @@ public class Main {
         String subcadena;
         String ppalabra;
         String spalabra;
+        String frase;
+        String newfrase;
 
         Scanner in = new Scanner(System.in);
         System.out.println("Bienvenido");
@@ -66,10 +68,12 @@ public class Main {
                     System.out.println("Ingrese la segunda palabra");
                     spalabra = in.nextLine();
                     if(ppalabra.equals(spalabra)){
-                        System.out.println("La palabra "+ppalabra + "es la misma que "+spalabra);
+                        System.out.println("La palabra "+ppalabra + " es la misma que "+spalabra);
                     }else{
                         System.out.println("La palabra "+ ppalabra + " No es la misma que " + spalabra);
                     }
+                    System.out.println("Presione enter para continuar");
+                    in.nextLine();
                 }
                 else{
                     System.out.println("Ingrese la primera palabra a comparar");
@@ -82,10 +86,42 @@ public class Main {
                     else{
                         System.out.println("La palabra " + ppalabra + " no es la misma que " + spalabra + " sin importar las mayusculas");
                     }
+                    System.out.println("Presione enter para continuar");
+                    in.nextLine();
                 }
+
+            }else if (selec == 4){
+                System.out.println("Ha ingresado en el comparador de tamaños");
+                System.out.println("Ingrese una frase y no solo palabras");
+                frase = in.nextLine();
+                if(frase.contains(" ")){
+                    System.out.println("Elija si se toman los espacios");
+                    System.out.println("1. Si");
+                    System.out.println("2. NO");
+                    yorn = Integer.parseInt(in.nextLine());
+                    if(yorn == 1){
+                        System.out.println("El texto es " + frase);
+                        System.out.println("y cuenta con " + frase.length() + " caracteres");
+                    }
+                    else{
+                        newfrase = frase.replace(" ", "");
+                        System.out.println("El texto es " + frase);
+                        System.out.println("y el texto sin espacios tiene " + newfrase.length() + " caracteres");
+                    }
+                    System.out.println("Presione enter para continuar");
+                    in.nextLine();
+                }
+                else{
+                    System.out.println("Esa no es una frase");
+                    System.out.println("Presione enter para continuar");
+                    in.nextLine();
+
+                }
+
 
             }
             else{
+                System.out.println("Hasta pronto");
                 break;
             }
         }
